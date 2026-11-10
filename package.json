@@ -1,0 +1,41 @@
+{
+  "name": "leek-fund-cli",
+  "version": "0.1.0",
+  "description": "Terminal UI for Leek Fund stock quotes",
+  "type": "module",
+  "bin": {
+    "leek-fund-cli": "dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "keywords": [
+    "leek-fund",
+    "stock",
+    "stocks",
+    "quote",
+    "tui",
+    "cli",
+    "terminal",
+    "股票",
+    "行情"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "clean": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\"",
+    "build": "tsc -p tsconfig.json",
+    "watch": "tsc -w -p tsconfig.json",
+    "start": "node dist/cli.js",
+    "prepack": "npm run clean && npm run build"
+  },
+  "dependencies": {
+    "@earendil-works/pi-tui": "1.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0"
+  }
+}
